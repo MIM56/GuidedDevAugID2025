@@ -411,13 +411,13 @@
 			<SpecificVersion>False</SpecificVersion>
 			<Private>False</Private>
 		</Reference>
-		<Reference Include="CrtMobileFreedomUIStylesFor7x">
-			<HintPath>$(RelativePkgFolderPath)/CrtMobileFreedomUIStylesFor7x/$(StandalonePackageAssemblyPath)/CrtMobileFreedomUIStylesFor7x.dll</HintPath>
+		<Reference Include="CrtCopilot">
+			<HintPath>$(RelativePkgFolderPath)/CrtCopilot/$(StandalonePackageAssemblyPath)/CrtCopilot.dll</HintPath>
 			<SpecificVersion>False</SpecificVersion>
 			<Private>False</Private>
 		</Reference>
-		<Reference Include="CrtCopilot">
-			<HintPath>$(RelativePkgFolderPath)/CrtCopilot/$(StandalonePackageAssemblyPath)/CrtCopilot.dll</HintPath>
+		<Reference Include="CrtMobileFreedomUIStylesFor7x">
+			<HintPath>$(RelativePkgFolderPath)/CrtMobileFreedomUIStylesFor7x/$(StandalonePackageAssemblyPath)/CrtMobileFreedomUIStylesFor7x.dll</HintPath>
 			<SpecificVersion>False</SpecificVersion>
 			<Private>False</Private>
 		</Reference>

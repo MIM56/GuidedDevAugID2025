@@ -1,14 +1,21 @@
 ﻿{
   "Descriptor": {
-    "UId": "b00f28c9-0f6d-4bd0-a3c4-7be5d7283e39",
+    "UId": "21407717-3fe7-4e3f-bbcb-615571472a6d",
     "Name": "SysImage_SectionIcon_UsrRealty",
-    "ModifiedOnUtc": "\/Date(1756356944000)\/",
+    "ModifiedOnUtc": "\/Date(1756391602000)\/",
     "InstallType": 0,
     "Schema": {
       "UId": "93986bfe-2dbd-46bc-9bf9-d03dfefbf3b8",
       "Name": "SysImage"
     },
     "Columns": [
+      {
+        "ColumnUId": "d245dcaf-23bd-4b73-8718-26fdf38b443b",
+        "IsForceUpdate": false,
+        "IsKey": false,
+        "ColumnName": "Name",
+        "DataTypeValueUId": "ddb3a1ee-07e8-4d62-b7a9-d0e618b00fbd"
+      },
       {
         "ColumnUId": "1e236958-f206-4fde-8a0e-6783fc223424",
         "IsForceUpdate": false,
@@ -29,13 +36,6 @@
         "IsKey": true,
         "ColumnName": "Id",
         "DataTypeValueUId": "23018567-a13c-4320-8687-fd6f9e3699bd"
-      },
-      {
-        "ColumnUId": "d245dcaf-23bd-4b73-8718-26fdf38b443b",
-        "IsForceUpdate": false,
-        "IsKey": false,
-        "ColumnName": "Name",
-        "DataTypeValueUId": "ddb3a1ee-07e8-4d62-b7a9-d0e618b00fbd"
       }
     ]
   }

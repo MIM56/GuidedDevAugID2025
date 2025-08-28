@@ -1,8 +1,8 @@
 ﻿{
   "Descriptor": {
-    "UId": "73dbffa3-eb4c-4717-acda-7bd155783596",
+    "UId": "9b771db1-6bc4-4e07-9b1c-612bd25548f4",
     "Name": "SysAdminUnitInWorkplace_MyApps",
-    "ModifiedOnUtc": "\/Date(1756356944000)\/",
+    "ModifiedOnUtc": "\/Date(1756391602000)\/",
     "InstallType": 0,
     "Schema": {
       "UId": "c24608d4-6299-45ab-8b08-84cbdff67d9a",
@@ -10,11 +10,11 @@
     },
     "Columns": [
       {
-        "ColumnUId": "ae0e45ca-c495-4fe7-a39d-3ab7278e1617",
+        "ColumnUId": "d5cfaf4a-0900-4ef9-aee8-2ede7f9d97fb",
         "IsForceUpdate": false,
-        "IsKey": true,
-        "ColumnName": "Id",
-        "DataTypeValueUId": "23018567-a13c-4320-8687-fd6f9e3699bd"
+        "IsKey": false,
+        "ColumnName": "SysWorkplace",
+        "DataTypeValueUId": "b295071f-7ea9-4e62-8d1a-919bf3732ff2"
       },
       {
         "ColumnUId": "b96bb4ca-a133-44f1-aa7d-24495d89e278",
@@ -24,11 +24,11 @@
         "DataTypeValueUId": "b295071f-7ea9-4e62-8d1a-919bf3732ff2"
       },
       {
-        "ColumnUId": "d5cfaf4a-0900-4ef9-aee8-2ede7f9d97fb",
+        "ColumnUId": "ae0e45ca-c495-4fe7-a39d-3ab7278e1617",
         "IsForceUpdate": false,
-        "IsKey": false,
-        "ColumnName": "SysWorkplace",
-        "DataTypeValueUId": "b295071f-7ea9-4e62-8d1a-919bf3732ff2"
+        "IsKey": true,
+        "ColumnName": "Id",
+        "DataTypeValueUId": "23018567-a13c-4320-8687-fd6f9e3699bd"
       }
     ]
   }

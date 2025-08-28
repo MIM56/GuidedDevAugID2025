@@ -37,7 +37,7 @@ define("UsrRealty_FormPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHE
 					"primaryColumnName": "AttachmentListDS_Id",
 					"columns": [
 						{
-							"id": "b8e68435-6b64-40f0-aa56-70dc0831225a",
+							"id": "f5a92c18-7d73-49b8-8160-2d0a0027753a",
 							"code": "AttachmentListDS_Name",
 							"caption": "#ResourceString(AttachmentListDS_Name)#",
 							"dataValueType": 28,

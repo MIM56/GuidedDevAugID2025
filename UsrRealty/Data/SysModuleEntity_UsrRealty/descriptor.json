@@ -1,21 +1,14 @@
 ﻿{
   "Descriptor": {
-    "UId": "d8065edf-ead6-467f-9416-3049c9cb0c36",
+    "UId": "f85d3606-d894-4bff-9bdc-e4774f61437f",
     "Name": "SysModuleEntity_UsrRealty",
-    "ModifiedOnUtc": "\/Date(1756356944000)\/",
+    "ModifiedOnUtc": "\/Date(1756391602000)\/",
     "InstallType": 0,
     "Schema": {
       "UId": "9c762665-90ad-497b-ac4b-45bb729630a1",
       "Name": "SysModuleEntity"
     },
     "Columns": [
-      {
-        "ColumnUId": "ae0e45ca-c495-4fe7-a39d-3ab7278e1617",
-        "IsForceUpdate": false,
-        "IsKey": true,
-        "ColumnName": "Id",
-        "DataTypeValueUId": "23018567-a13c-4320-8687-fd6f9e3699bd"
-      },
       {
         "ColumnUId": "0c59594b-490a-4b55-a564-5841cfae3c19",
         "IsForceUpdate": false,
@@ -28,6 +21,13 @@
         "IsForceUpdate": false,
         "IsKey": false,
         "ColumnName": "TypeColumnUId",
+        "DataTypeValueUId": "23018567-a13c-4320-8687-fd6f9e3699bd"
+      },
+      {
+        "ColumnUId": "ae0e45ca-c495-4fe7-a39d-3ab7278e1617",
+        "IsForceUpdate": false,
+        "IsKey": true,
+        "ColumnName": "Id",
         "DataTypeValueUId": "23018567-a13c-4320-8687-fd6f9e3699bd"
       }
     ]
