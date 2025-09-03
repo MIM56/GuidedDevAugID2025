@@ -1,0 +1,19 @@
+<Project>
+	<ItemGroup Condition="'$(PkgPath)' != ''">
+		<Compile Remove="$(PkgPath)/AsposeCloud/Assemblies/**" />
+		<Compile Remove="$(PkgPath)/AsposeCloud/Data/**" />
+		<Compile Remove="$(PkgPath)/AsposeCloud/SqlScripts/**" />
+		<Compile Remove="$(PkgPath)/AsposeCloud/Schemas\**" />
+		<Compile Remove="$(PkgPath)/AsposeCloud/Resources/**" />
+		<EmbeddedResource Remove="$(PkgPath)/AsposeCloud/Assemblies/**" />
+		<EmbeddedResource Remove="$(PkgPath)/AsposeCloud/Data/**" />
+		<EmbeddedResource Remove="$(PkgPath)/AsposeCloud/SqlScripts/**" />
+		<EmbeddedResource Remove="$(PkgPath)/AsposeCloud/Schemas/**" />
+		<EmbeddedResource Remove="$(PkgPath)/AsposeCloud/Resources/**" />
+		<None Remove="$(PkgPath)/AsposeCloud/Assemblies/**" />
+		<None Remove="$(PkgPath)/AsposeCloud/Data/**" />
+		<None Remove="$(PkgPath)/AsposeCloud/SqlScripts/**" />
+		<None Remove="$(PkgPath)/AsposeCloud/Schemas/**" />
+		<None Remove="$(PkgPath)/AsposeCloud/Resources/**" />
+  </ItemGroup>
+</Project>

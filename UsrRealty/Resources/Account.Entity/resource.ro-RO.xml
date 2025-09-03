@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="ro-RO">
+	<Group Type="String">
+		<Items>
+			<Item Name="Columns.AccountCategory.Caption" Value="Categorie" />
+			<Item Name="Columns.AccountLogo.Caption" Value="Logo-ul contului" />
+			<Item Name="Columns.AddressType.Caption" Value="Tipul adresei" />
+			<Item Name="Columns.AnnualRevenue.Caption" Value="Venituri anuale" />
+			<Item Name="Columns.City.Caption" Value="Oraș" />
+			<Item Name="Columns.Country.Caption" Value="Țară" />
+			<Item Name="Columns.CreatedBy.Caption" Value="Creat de catre" />
+			<Item Name="Columns.EmployeesNumber.Caption" Value="Numărul angajaților" />
+			<Item Name="Columns.Industry.Caption" Value="Industrie" />
+			<Item Name="Columns.ModifiedBy.Caption" Value="Modificat de catre" />
+			<Item Name="Columns.Owner.Caption" Value="Owner" />
+			<Item Name="Columns.Ownership.Caption" Value="Entitate de afaceri" />
+			<Item Name="Columns.Parent.Caption" Value="Cont părinte" />
+			<Item Name="Columns.PrimaryContact.Caption" Value="Contact principal" />
+			<Item Name="Columns.Region.Caption" Value="Stat/Provincie" />
+			<Item Name="Columns.Type.Caption" Value="Tip" />
+		</Items>
+	</Group>
+</Resources>

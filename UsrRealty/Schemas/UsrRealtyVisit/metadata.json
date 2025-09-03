@@ -1,0 +1,106 @@
+= MetaData.Schema.UId "5d4be906-9b7e-4c46-a678-9a6bb8f8cfbd"
+= MetaData.Schema.A2 "UsrRealtyVisit"
+= MetaData.Schema.A5 "8ed589b1-582f-4ea3-b356-d746e937bc30"
+= MetaData.Schema.B6 "7895e699-a91a-4320-9460-fec7c4134648"
+= MetaData.Schema.B8 "8.3.0.3074"
+= MetaData.Schema.EG1.UId "8c68daa3-efbd-4316-af34-f38690718433"
+= MetaData.Schema.EG1.A2 "UsrEntity_c370c27EventsProcess"
+= MetaData.Schema.EG1.A5 "8ed589b1-582f-4ea3-b356-d746e937bc30"
++ MetaData.Schema.EG1.B8 "8.3.0.3074"
+= MetaData.Schema.EG1.BK8 "7bb7d6a5-e7a3-4837-83bc-7f785d688165"
+= MetaData.Schema.EG1.BK37.A3 "bb4d6607-026b-4b27-b640-8f5c77c1e89d"
+= MetaData.Schema.EG1.BK37.A4 "bb4d6607-026b-4b27-b640-8f5c77c1e89d"
+= MetaData.Schema.EG1.BK4.["08594d74-60b0-45ce-bf17-bac1a8b127f7"].CK2.["496d4a3c-b644-4a65-b0ed-2534d9236da5"].BL7 "53818048-7868-48f6-ada0-0ebaa65af628"
+= MetaData.Schema.EG1.BK4.["90027ac8-c9c3-4d21-a4f9-da1cde752cd1"].CK2.["d8b8410f-5c8a-4ddc-8fc2-353483452aed"].BL7 "53818048-7868-48f6-ada0-0ebaa65af628"
+= MetaData.Schema.EG1.BK4.["5f3bfbbe-1820-44ca-92f1-6f993169b2dd"].CK2.["d7c806b7-a29b-4ce5-9167-b3319472e772"].BL7 "53818048-7868-48f6-ada0-0ebaa65af628"
+= MetaData.Schema.EG1.BK4.["dbf48103-dcf6-4f53-a052-d727a95ea0b4"].CK2.["933bf2fc-d052-40c8-a3e0-bf60049da5d8"].BL7 "53818048-7868-48f6-ada0-0ebaa65af628"
+= MetaData.Schema.EG1.BK4.["f0646c74-f291-474f-9a10-143ee868f1c9"].CK2.["b3d5b61f-7afe-48b5-a8cc-40317ea9c428"].BL7 "53818048-7868-48f6-ada0-0ebaa65af628"
+= MetaData.Schema.EG1.BK4.["8140d7e7-fb91-4999-8347-543345440efb"].CK2.["c803a450-c8dc-47a4-b704-7125c23db317"].BL7 "53818048-7868-48f6-ada0-0ebaa65af628"
+= MetaData.Schema.EG1.JC1 []
+= MetaData.Schema.D8 "1bab9dcf-17d5-49f8-9536-8e0064f1dce0"
++ MetaData.Schema.D2 {
+  "UId": "79b1c6af-10df-102b-c5e7-685c9e9fe44e",
+  "A2": "UsrManager",
+  "A3": "5d4be906-9b7e-4c46-a678-9a6bb8f8cfbd",
+  "A4": "5d4be906-9b7e-4c46-a678-9a6bb8f8cfbd",
+  "A5": "8ed589b1-582f-4ea3-b356-d746e937bc30",
+  "S2": "b295071f-7ea9-4e62-8d1a-919bf3732ff2",
+  "S4": "16be3651-8fe2-4159-8dd0-a803d4683dd3",
+  "E6": true,
+  "E20": true,
+  "E12": {
+    "FB1": 3,
+    "FB2": "4f367ca9-549b-4a1a-b64e-a40123f52ac0"
+  },
+  "E17": "UsrManagerId",
+  "E18": "UsrManagerName"
+}
++ MetaData.Schema.D2 {
+  "UId": "8b90510a-fdf2-ae89-cbee-deabc5afc4d1",
+  "A2": "UsrComments",
+  "A3": "5d4be906-9b7e-4c46-a678-9a6bb8f8cfbd",
+  "A4": "5d4be906-9b7e-4c46-a678-9a6bb8f8cfbd",
+  "A5": "8ed589b1-582f-4ea3-b356-d746e937bc30",
+  "S2": "ddb3a1ee-07e8-4d62-b7a9-d0e618b00fbd"
+}
++ MetaData.Schema.D2 {
+  "UId": "49f8806c-c9b8-c18d-4a26-e2126b44fe25",
+  "A2": "UsrPotentialCustomer",
+  "A3": "5d4be906-9b7e-4c46-a678-9a6bb8f8cfbd",
+  "A4": "5d4be906-9b7e-4c46-a678-9a6bb8f8cfbd",
+  "A5": "8ed589b1-582f-4ea3-b356-d746e937bc30",
+  "S2": "b295071f-7ea9-4e62-8d1a-919bf3732ff2",
+  "S4": "16be3651-8fe2-4159-8dd0-a803d4683dd3",
+  "E6": true,
+  "E17": "UsrPotentialCustomerId",
+  "E18": "UsrPotentialCustomerName"
+}
++ MetaData.Schema.D2 {
+  "UId": "ae59ae80-2624-8e55-6390-45eb75071951",
+  "A2": "UsrVisitDateTime",
+  "A3": "5d4be906-9b7e-4c46-a678-9a6bb8f8cfbd",
+  "A4": "5d4be906-9b7e-4c46-a678-9a6bb8f8cfbd",
+  "A5": "8ed589b1-582f-4ea3-b356-d746e937bc30",
+  "S2": "d21e9ef4-c064-4012-b286-fa1a8171da44",
+  "E2": 1,
+  "E12": {
+    "FB1": 3,
+    "FB2": "d7c295d3-3146-4ee1-ac49-3a7bd0edc45d"
+  }
+}
++ MetaData.Schema.D2 {
+  "UId": "6c94c430-9514-d55f-e207-178b7bf43db9",
+  "A2": "UsrParentRealty",
+  "A3": "5d4be906-9b7e-4c46-a678-9a6bb8f8cfbd",
+  "A4": "5d4be906-9b7e-4c46-a678-9a6bb8f8cfbd",
+  "A5": "8ed589b1-582f-4ea3-b356-d746e937bc30",
+  "S2": "b295071f-7ea9-4e62-8d1a-919bf3732ff2",
+  "S4": "7a337175-0f2d-4f6b-8fd3-948e71ef7fe0",
+  "E2": 1,
+  "E6": true,
+  "E17": "UsrParentRealtyId",
+  "E18": "UsrParentRealtyUsrName"
+}
+~ MetaData.Schema.D2 ["ae0e45ca-c495-4fe7-a39d-3ab7278e1617","e80190a5-03b2-4095-90f7-a193a960adee","ebf6bb93-8aa6-4a01-900d-c6ea67affe21","9928edec-4272-425a-93bb-48743fee4b04","3015559e-cbc6-406a-88af-07f7930be832","3fabd836-6a53-4d8d-9069-6df88d9dae1e","79b1c6af-10df-102b-c5e7-685c9e9fe44e","8b90510a-fdf2-ae89-cbee-deabc5afc4d1","49f8806c-c9b8-c18d-4a26-e2126b44fe25","ae59ae80-2624-8e55-6390-45eb75071951","6c94c430-9514-d55f-e207-178b7bf43db9"]
+= MetaData.Schema.D20.A2 "UsrRealtyVisitEvents"
+= MetaData.Schema.D36.A3 "5d4be906-9b7e-4c46-a678-9a6bb8f8cfbd"
+= MetaData.Schema.D36.BS1 false
+- MetaData.Schema.EG1.B6
+- MetaData.Schema.EG1.BK29
+- MetaData.Schema.EG1.BK30
+- MetaData.Schema.D1
+- MetaData.Schema.D20.A5
+- MetaData.Schema.D20.FA4
+- MetaData.Schema.D20.FA5
+- MetaData.Schema.D20.FA6
+- MetaData.Schema.D20.FA7
+- MetaData.Schema.D20.FA11
+- MetaData.Schema.D20.FA12
+- MetaData.Schema.D20.FA15
++ MetaData.Schema.B7 false
++ MetaData.Schema.D2.["ae0e45ca-c495-4fe7-a39d-3ab7278e1617"].E16 false
++ MetaData.Schema.D2.["e80190a5-03b2-4095-90f7-a193a960adee"].E16 false
++ MetaData.Schema.D2.["ebf6bb93-8aa6-4a01-900d-c6ea67affe21"].E16 false
++ MetaData.Schema.D2.["9928edec-4272-425a-93bb-48743fee4b04"].E16 false
++ MetaData.Schema.D2.["3015559e-cbc6-406a-88af-07f7930be832"].E16 false
++ MetaData.Schema.D2.["3fabd836-6a53-4d8d-9069-6df88d9dae1e"].E16 false
