@@ -91,12 +91,13 @@ define("UsrRealtyVisitPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHE
 						"rowSpan": 1
 					},
 					"type": "crt.ComboBox",
-					"label": "$Resources.Strings.UsrRealtyVisitDS_UsrManager_1ywas2g",
+					"label": "$Resources.Strings.UsrRealtyVisitDS_UsrManager_eo0d8hm",
 					"labelPosition": "above",
-					"control": "$UsrRealtyVisitDS_UsrManager_1ywas2g",
+					"control": "$UsrRealtyVisitDS_UsrManager_eo0d8hm",
 					"listActions": [],
 					"showValueAsLink": true,
-					"controlActions": []
+					"controlActions": [],
+					"readonly": false
 				},
 				"parentName": "MainContainer",
 				"propertyName": "items",
@@ -142,7 +143,7 @@ define("UsrRealtyVisitPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHE
 							"path": "UsrRealtyVisitDS.UsrComments"
 						}
 					},
-					"UsrRealtyVisitDS_UsrManager_1ywas2g": {
+					"UsrRealtyVisitDS_UsrManager_eo0d8hm": {
 						"modelConfig": {
 							"path": "UsrRealtyVisitDS.UsrManager"
 						}

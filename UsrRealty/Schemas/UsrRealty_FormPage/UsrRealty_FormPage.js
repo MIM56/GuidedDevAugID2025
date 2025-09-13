@@ -128,6 +128,25 @@ define("UsrRealty_FormPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHE
 			},
 			{
 				"operation": "insert",
+				"name": "RunMaxPriceWebServiceMenuItem",
+				"values": {
+					"type": "crt.MenuItem",
+					"caption": "#ResourceString(RunMaxPriceWebServiceMenuItem_caption)#",
+					"visible": true,
+					"clicked": {
+						"request": "crt.SaveRecordRequest",
+						"params": {
+							"showSuccessMessage": true
+						}
+					},
+					"icon": "process-button-icon"
+				},
+				"parentName": "Button_rzj3lxj",
+				"propertyName": "menuItems",
+				"index": 1
+			},
+			{
+				"operation": "insert",
 				"name": "PushMeButton",
 				"values": {
 					"type": "crt.Button",
@@ -786,6 +805,11 @@ define("UsrRealty_FormPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHE
 					"PDS_UsrComment_bn1nrtj": {
 						"modelConfig": {
 							"path": "PDS.UsrComment"
+						},
+						"validators": {
+							"required": {
+								"type": "crt.Required"
+							}
 						}
 					},
 					"PDS_UsrManager_3uu4l6k": {
@@ -962,8 +986,8 @@ define("UsrRealty_FormPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHE
 				request: "crt.HandleViewModelAttributeChangeRequest",
 				/* The custom implementation of the system query handler. */
 				handler: async (request, next) => {
-      				if (request.attributeName === 'PDS_UsrPrice_j3qpyme' || 				             // if price changed
-					request.attributeName === 'PDS_UsrOfferTypeUsrCommissionPercent_hahv5y7' ) { 		// or percent changed
+      				if (request.attributeName === 'PDS_UsrOfferType_j1e6itv' || 	// if price changed
+					request.attributeName === 'PDS_UsrPrice_j3qpyme' ) { 		// or percent changed
 					/* debugger; */
 					var price = await request.$context.PDS_UsrPrice_j3qpyme;
 					var percent = await request.$context.PDS_UsrOfferTypeUsrCommissionPercent_hahv5y7;
@@ -973,7 +997,78 @@ define("UsrRealty_FormPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHE
 				/* Call the next handler if it exists and return its result. */
 				return next?.handle(request);
 			}
-		}
+		},
+			
+		{		
+				request: "crt.HandleViewModelAttributeChangeRequest",
+		        /* The custom implementation of the base request handler. */
+		        handler: async (request, next) => {
+		            /* Check the request status. */
+		            if (request.attributeName === 'PDS_UsrPrice_j3qpyme') {
+						/* Create an instance of the system setting service from "@creatio-devkit/common." */
+			            var sysSettingsService = new sdk.SysSettingsService();
+						
+			            /* Retrieve the value of the "MinPriceToRequireRealtyComment" system setting. */
+		                var minPriceToRequireRealtyComment = (await sysSettingsService.getByCode('MinPriceToRequireRealtyComment')).value;	
+						
+						var currentPrice = await request.$context.PDS_UsrPrice_j3qpyme;
+		                var isPassMinPrice = currentPrice > minPriceToRequireRealtyComment;
+						
+						/* Check the request description. */
+		                if (isPassMinPrice) {
+		                    request.$context.enableAttributeValidator('PDS_UsrComment_bn1nrtj', 'required');
+		                } else {
+		                    request.$context.disableAttributeValidator('PDS_UsrComment_bn1nrtj', 'required');
+		                }
+		            }
+		            
+					/* Call the next handler if it exists and return its result. */
+		            return next?.handle(request);
+			        }
+			}, 
+
+			{
+				request: "usr.RunWebServiceButtonRequest",
+				/* Implementation of the custom query handler. */
+				handler: async (request, next) => {
+					console.log("Run web service button works...");
+
+					// get id from type lookup type object
+					var typeObject = await request.$context.PDS_UsrType_wvulma8;
+					var typeId = "";
+					if (typeObject) {
+						typeId = typeObject.value;
+					}
+
+					// get id from type lookup offer type object
+					var offerTypeObject = await request.$context.PDS_UsrOfferType_j1e6itv;
+					var offerTypeId = "";
+					if (offerTypeObject) {
+						offerTypeId = offerTypeObject.value;
+					}
+					/* Create an instance of the HTTP client from @creatio-devkit/common. */
+					const httpClientService = new sdk.HttpClientService();
+
+					/* Specify the URL to run web service method. */
+					const baseUrl = Terrasoft.utils.uri.getConfigurationWebServiceBaseUrl();
+					const transferName = "rest";
+					const serviceName = "RealtyService";
+					const methodName = "GetMaxPriceByTypeId";
+					const endpoint = Terrasoft.combinePath(baseUrl, transferName, serviceName, methodName);
+					//const endpoint = "http://localhost/D1_Studio/0/rest/RealtyService/GetMaxPriceByTypeId";
+					/* Send a POST HTTP request. The HTTP client converts the response body from JSON to a JS object automatically. */
+					var params = {
+						realtyTypeId: typeId,
+						realtyOfferTypeId: offerTypeId
+					};
+					const response = await httpClientService.post(endpoint, params);
+					
+					console.log("response max price = " + response.body.GetMaxPriceByTypeIdResult);
+					
+					/* Call the next handler if it exists and return its result. */
+					return next?.handle(request);
+				}
+			}
 			
 		]/**SCHEMA_HANDLERS*/,
 		converters: /**SCHEMA_CONVERTERS*/{}/**SCHEMA_CONVERTERS*/,

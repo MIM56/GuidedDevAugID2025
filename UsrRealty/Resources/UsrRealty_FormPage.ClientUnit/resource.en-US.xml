@@ -27,11 +27,13 @@
 			<Item Name="LocalizableStrings.GridDetailSearchFilter_bmmklu9_placeholder.Value" Value="Search" />
 			<Item Name="LocalizableStrings.GridDetailSettingsBtn_t6ditnx_caption.Value" Value="Actions" />
 			<Item Name="LocalizableStrings.MenuItem_4e6jjmf_caption.Value" Value="Run average price calculation process" />
+			<Item Name="LocalizableStrings.MenuItem_yi4a9b1_caption.Value" Value="Menu item" />
 			<Item Name="LocalizableStrings.NumberInput_cnuuqsp_label.Value" Value="Number" />
 			<Item Name="LocalizableStrings.NumberInput_grgj1fc_label.Value" Value="Number" />
 			<Item Name="LocalizableStrings.NumberInput_lhb0gee_label.Value" Value="Number" />
 			<Item Name="LocalizableStrings.PriceCannotBeLess.Value" Value="Price cannot be less than 50.0 USD" />
 			<Item Name="LocalizableStrings.PushMeButton_caption.Value" Value="Push me!" />
+			<Item Name="LocalizableStrings.RunMaxPriceWebServiceMenuItem_caption.Value" Value="Run web service to get Max price" />
 		</Items>
 	</Group>
 </Resources>

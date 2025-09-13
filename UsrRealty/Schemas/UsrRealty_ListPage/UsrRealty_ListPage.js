@@ -3,6 +3,22 @@ define("UsrRealty_ListPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHE
 		viewConfigDiff: /**SCHEMA_VIEW_CONFIG_DIFF*/[
 			{
 				"operation": "merge",
+				"name": "AddButton",
+				"values": {
+					"clicked": {
+						"request": "crt.CreateRecordRequest",
+						"params": {
+							"entityName": "UsrRealty"
+						}
+					},
+					"caption": "#ResourceString(AddButton_caption)#",
+					"size": "large",
+					"visible": true,
+					"clickMode": "default"
+				}
+			},
+			{
+				"operation": "merge",
 				"name": "MenuItem_ImportFromExcel",
 				"values": {
 					"clicked": {

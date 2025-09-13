@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="en-US">
+	<Group Type="String">
+		<Items>
+			<Item Name="Caption" Value="https://gorest.co.in" />
+			<Item Name="ServiceMethods.UsrMethod1.Caption" Value="/public/v2/users" />
+			<Item Name="ServiceMethods.UsrMethod1.Response.Parameters.UsrParameter.Caption" Value="Parameter" />
+			<Item Name="ServiceMethods.UsrMethod1.Response.Parameters.UsrParameter.ItemProperties.UsrEmail.Caption" Value="Email" />
+			<Item Name="ServiceMethods.UsrMethod1.Response.Parameters.UsrParameter.ItemProperties.UsrGender.Caption" Value="Gender" />
+			<Item Name="ServiceMethods.UsrMethod1.Response.Parameters.UsrParameter.ItemProperties.UsrId.Caption" Value="Id" />
+			<Item Name="ServiceMethods.UsrMethod1.Response.Parameters.UsrParameter.ItemProperties.UsrName.Caption" Value="Name" />
+		</Items>
+	</Group>
+</Resources>

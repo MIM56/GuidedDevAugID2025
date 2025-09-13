@@ -3,6 +3,7 @@
 	<Group Type="String">
 		<Items>
 			<Item Name="Caption" Value="Realty list page" />
+			<Item Name="LocalizableStrings.AddButton_caption.Value" Value="Nieuw" />
 		</Items>
 	</Group>
 </Resources>
