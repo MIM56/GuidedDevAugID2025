@@ -1,6 +1,22 @@
-define("UsrRealty_FormPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHEMA_ARGS*/()/**SCHEMA_ARGS*/ {
+define("UsrRealty_FormPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/**SCHEMA_DEPS*/, function/**SCHEMA_ARGS*/(sdk)/**SCHEMA_ARGS*/ {
 	return {
 		viewConfigDiff: /**SCHEMA_VIEW_CONFIG_DIFF*/[
+			{
+				"operation": "merge",
+				"name": "CardContentWrapper",
+				"values": {
+					"padding": {
+						"left": "small",
+						"right": "small",
+						"top": "none",
+						"bottom": "none"
+					},
+					"visible": true,
+					"color": "transparent",
+					"borderRadius": "none",
+					"alignItems": "stretch"
+				}
+			},
 			{
 				"operation": "merge",
 				"name": "SideAreaProfileContainer",
@@ -134,7 +150,7 @@ define("UsrRealty_FormPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHE
 					"caption": "#ResourceString(RunMaxPriceWebServiceMenuItem_caption)#",
 					"visible": true,
 					"clicked": {
-						"request": "crt.SaveRecordRequest",
+						"request": "usr.RunWebServiceButtonRequest",
 						"params": {
 							"showSuccessMessage": true
 						}
@@ -147,13 +163,60 @@ define("UsrRealty_FormPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHE
 			},
 			{
 				"operation": "insert",
+				"name": "RunWebServiceMinimunPriceOfRealty",
+				"values": {
+					"type": "crt.Button",
+					"caption": "#ResourceString(RunWebServiceMinimunPriceOfRealty_caption)#",
+					"color": "warn",
+					"disabled": false,
+					"size": "medium",
+					"iconPosition": "only-text",
+					"visible": true,
+					"clicked": {
+						"request": "MinimumPriceOfRealtyRunWebServiceButtonRequest"
+					},
+					"clickMode": "default"
+				},
+				"parentName": "CardToggleContainer",
+				"propertyName": "items",
+				"index": 1
+			},
+			{
+				"operation": "insert",
+				"name": "PushRealtyVisitsButton",
+				"values": {
+					"type": "crt.Button",
+					"caption": "#ResourceString(PushRealtyVisitsButton_caption)#",
+					"color": "primary",
+					"disabled": false,
+					"size": "medium",
+					"iconPosition": "only-text",
+					"visible": true,
+					"clicked": {
+						"request": "crt.RunBusinessProcessRequest",
+						"params": {
+							"processName": "UsrAddRealtyVisitByButton",
+							"processRunType": "ForTheSelectedPage",
+							"saveAtProcessStart": true,
+							"showNotification": true,
+							"recordIdProcessParameterName": "RealtyId"
+						}
+					},
+					"clickMode": "default"
+				},
+				"parentName": "CardToggleContainer",
+				"propertyName": "items",
+				"index": 2
+			},
+			{
+				"operation": "insert",
 				"name": "PushMeButton",
 				"values": {
 					"type": "crt.Button",
 					"caption": "#ResourceString(PushMeButton_caption)#",
 					"color": "accent",
 					"disabled": false,
-					"size": "large",
+					"size": "medium",
 					"iconPosition": "left-icon",
 					"visible": true,
 					"clicked": {
@@ -164,7 +227,7 @@ define("UsrRealty_FormPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHE
 				},
 				"parentName": "CardToggleContainer",
 				"propertyName": "items",
-				"index": 1
+				"index": 3
 			},
 			{
 				"operation": "insert",
@@ -696,8 +759,8 @@ define("UsrRealty_FormPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHE
 							}
 						},
 						"editable": {
-							"enable": true,
-							"floatingEditPanel": true,
+							"enable": false,
+							"floatingEditPanel": false,
 							"itemsCreation": false
 						}
 					},
@@ -740,7 +803,9 @@ define("UsrRealty_FormPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHE
 							"width": 154
 						}
 					],
-					"placeholder": false
+					"placeholder": false,
+					"visible": true,
+					"fitContent": true
 				},
 				"parentName": "GridContainer_fud3chp",
 				"propertyName": "items",
@@ -1064,6 +1129,51 @@ define("UsrRealty_FormPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHE
 					const response = await httpClientService.post(endpoint, params);
 					
 					console.log("response max price = " + response.body.GetMaxPriceByTypeIdResult);
+					
+					/* Call the next handler if it exists and return its result. */
+					return next?.handle(request);
+				}
+			},
+
+			{
+				request: "MinimumPriceOfRealtyRunWebServiceButtonRequest",
+				/* Implementation of the custom query handler. */
+				handler: async (request, next) => {
+					console.log("Run web service Minimun Price Of Realty button works...");
+
+					// get id from type lookup type object
+					var typeObject = await request.$context.PDS_UsrType_wvulma8;
+					var typeId = "";
+					if (typeObject) {
+						typeId = typeObject.value;
+					}
+
+					// get id from type lookup offer type object
+					var offerTypeObject = await request.$context.PDS_UsrOfferType_j1e6itv;
+					var offerTypeId = "";
+					if (offerTypeObject) {
+						offerTypeId = offerTypeObject.value;
+					}
+					
+					/* Create an instance of the HTTP client from @creatio-devkit/common. */
+					const httpClientService = new sdk.HttpClientService();
+
+					/* Specify the URL to run web service method. */
+					const baseUrl = Terrasoft.utils.uri.getConfigurationWebServiceBaseUrl();
+					const transferName = "rest";
+					const serviceName = "RealtyService";
+					const methodName = "GetMaxPriceTypeId";
+					const endpoint = Terrasoft.combinePath(baseUrl, transferName, serviceName, methodName);
+
+					//const endpoint = "http://localhost/Creatio-Assigment/0/rest/RealtyService/GetRealtyMinPriceByTypeIdAndOfferTypeId";
+					/* Send a POST HTTP request. The HTTP client converts the response body from JSON to a JS object automatically. */
+					var params = {
+						realtyTypeId: typeId,
+						realtyOfferTypeId: offerTypeId
+					};
+					const response = await httpClientService.post(endpoint, params);
+					
+					console.log("Response min realty price = " + response.body.GetMaxPriceTypeIdResult);
 					
 					/* Call the next handler if it exists and return its result. */
 					return next?.handle(request);

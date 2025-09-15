@@ -30,6 +30,26 @@
             decimal result = select.ExecuteScalar<decimal>();
             return result;
         }
+	   
+	   [OperationContract]
+        [WebInvoke(Method = "POST", BodyStyle = WebMessageBodyStyle.Wrapped,
+            RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
+		public decimal GetMaxPriceTypeId(string realtyTypeId, string realtyOfferTypeId)
+        {
+            if (string.IsNullOrEmpty(realtyTypeId) || string.IsNullOrEmpty(realtyOfferTypeId))
+            {
+                return -1;
+            }
+            Select select = new Select(UserConnection)
+                .Column(Func.Min("UsrPrice"))
+                .From("UsrRealty")
+                .Where("UsrTypeId").IsEqual(Column.Parameter(new Guid(realtyTypeId)))
+                .And("UsrOfferTypeId").IsEqual(Column.Parameter(new Guid(realtyOfferTypeId)))
+                as Select;
+            decimal result = select.ExecuteScalar<decimal>();
+            return result;
+        }
+	   
         [OperationContract]
         [WebInvoke(Method = "GET", BodyStyle = WebMessageBodyStyle.Wrapped,
             RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]

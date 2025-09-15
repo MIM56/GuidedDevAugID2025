@@ -33,7 +33,9 @@
 			<Item Name="LocalizableStrings.NumberInput_lhb0gee_label.Value" Value="Number" />
 			<Item Name="LocalizableStrings.PriceCannotBeLess.Value" Value="Price cannot be less than 50.0 USD" />
 			<Item Name="LocalizableStrings.PushMeButton_caption.Value" Value="Push me!" />
+			<Item Name="LocalizableStrings.PushRealtyVisitsButton_caption.Value" Value="Push Realty Visits!" />
 			<Item Name="LocalizableStrings.RunMaxPriceWebServiceMenuItem_caption.Value" Value="Run web service to get Max price" />
+			<Item Name="LocalizableStrings.RunWebServiceMinimunPriceOfRealty_caption.Value" Value="Run Realty Web Service" />
 		</Items>
 	</Group>
 </Resources>

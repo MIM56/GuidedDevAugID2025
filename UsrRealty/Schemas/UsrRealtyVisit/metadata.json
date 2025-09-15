@@ -24,7 +24,7 @@
 + MetaData.Schema.D38 true
 + MetaData.Schema.D2 {
   "UId": "79b1c6af-10df-102b-c5e7-685c9e9fe44e",
-  "A2": "UsrManager",
+  "A2": "UsrOwner",
   "A3": "5d4be906-9b7e-4c46-a678-9a6bb8f8cfbd",
   "A4": "5d4be906-9b7e-4c46-a678-9a6bb8f8cfbd",
   "A5": "8ed589b1-582f-4ea3-b356-d746e937bc30",
@@ -36,8 +36,8 @@
     "FB1": 3,
     "FB2": "4f367ca9-549b-4a1a-b64e-a40123f52ac0"
   },
-  "E17": "UsrManagerId",
-  "E18": "UsrManagerName"
+  "E17": "UsrOwnerId",
+  "E18": "UsrOwnerName"
 }
 + MetaData.Schema.D2 {
   "UId": "8b90510a-fdf2-ae89-cbee-deabc5afc4d1",
